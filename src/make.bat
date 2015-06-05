@@ -1,0 +1,1 @@
+javac -d ../bin/ *.java && cd ../bin && java Window && cd ../src
