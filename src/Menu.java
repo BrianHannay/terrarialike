@@ -21,7 +21,7 @@ public class Menu extends JPanel{
 		parent.validate();
 		parent.setVisible(true);
 	}
-
+ 
 	public void paint(Graphics g){
 
 		for (MenuButton button : buttons) {
