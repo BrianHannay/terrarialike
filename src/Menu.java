@@ -15,8 +15,16 @@ public class Menu extends JPanel{
 	public Menu(Container parent){
 		parent.add((JPanel)this);
 
-		buttons.add(new MenuButton(Images.MenuNew , new Point(100, 50) , new Point(500, 150)));
-		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)));
+		buttons.add(new MenuButton(Images.MenuNew , new Point(100, 50) , new Point(500, 150)){
+			public void onClick(){
+				new MenuNewGame(parent);
+			}
+		});
+		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)){
+			public void onClick(){
+				new MenuLoadGame(parent);
+			}
+		});
 
 		parent.validate();
 		parent.setVisible(true);
@@ -42,12 +50,11 @@ public class Menu extends JPanel{
 
 		public void tryClick(Point p){
 			if (p.x > topleft.x && p.y > topleft.y && p.x < bottomright.x && p.y < bottomright.y) {
-				System.out.println("Clicked");
-			}
-			else{
-				System.out.println("Not clicked.");
+				onClick();
 			}
 		}
+
+		public abstract void onClick();
 
 		public BufferedImage getImage(){
 			return bi;
