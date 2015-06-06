@@ -8,4 +8,5 @@ git commit -m "Autocommit from SublimeText2"
 echo "Git push"
 git push origin master
 echo "Starting program"
+cd bin
 java Window
