@@ -38,7 +38,7 @@ public class Menu extends JPanel{
 
 	}
 
-	private class MenuButton implements Clickable{
+	private abstract class MenuButton implements Clickable{
 		public Point topleft, bottomright;
 		BufferedImage bi;
 		public MenuButton(BufferedImage bi, Point topleft, Point bottomright){
