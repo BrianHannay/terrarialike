@@ -37,7 +37,7 @@ public class Menu extends JPanel{
 			this.bi = bi;
 			this.topleft = topleft;
 			this.bottomright = bottomright;
-			InputHandler.registerClickable(this);
+			InputHandler.rgitegisterClickable(this);
 		}
 
 		public void tryClick(Point p){
