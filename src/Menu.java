@@ -14,6 +14,7 @@ public class Menu extends JPanel{
 	
 	public Menu(Container parent){
 		parent.add((JPanel)this);
+		parent.remove(this);
 
 		buttons.add(new MenuButton(Images.MenuNew , new Point(100, 50) , new Point(500, 150)){
 			public void onClick(){
