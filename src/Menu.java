@@ -23,7 +23,7 @@ public class Menu extends JPanel{
 		});
 		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)){
 			public void onClick(){
-				parent.remove(thisMenu);
+				//parent.remove(thisMenu);
 				new MenuLoadGame(Window.window);
 			}
 		});
