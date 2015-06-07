@@ -21,12 +21,14 @@ public class Menu extends JPanel{
 				//this menu can be removed now -- another one is taking it's place.
 				myParent.remove(thisMenu);
 				new MenuNewGame(Window.window);
+				myParent.validate();
 			}
 		});
 		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)){
 			public void onClick(){
 				myParent.remove(thisMenu);
 				new MenuLoadGame(myParent);
+				myParent.validate();
 			}
 		});
 
