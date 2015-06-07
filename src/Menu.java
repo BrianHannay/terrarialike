@@ -11,7 +11,7 @@ public class Menu extends JPanel{
 
 
 	ArrayList<MenuButton> buttons = new ArrayList<MenuButton>();
-
+	
 	public Menu(Container parent){
 		parent.add((JPanel)this);
 
