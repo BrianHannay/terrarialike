@@ -15,7 +15,9 @@ public class Window extends JFrame
 
 	private void init(){
 		window = this;
-		Menu menu = new Menu(this);
+		
+		//Creating a menu adds it to the container it is passed
+		new Menu(this);
 	}
 
 	public static void main(String[] args){

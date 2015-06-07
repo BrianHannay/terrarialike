@@ -1,10 +1,5 @@
 import java.awt.*;
 import javax.swing.*;
-
-//required for MenuButton
-import java.awt.image.BufferedImage;
-import java.awt.Point;
-
 import java.util.ArrayList;
 
 public class Menu extends JPanel{
@@ -14,18 +9,24 @@ public class Menu extends JPanel{
 	
 	public Menu(Container parent){
 		parent.add((JPanel)this);
+
+		//These two lines set variables for the MenuButton's onClick events
+		//since variables used in the inner classes overridden methods 
+		//need to be final
 		final Menu thisMenu = this;
 		final Container myParent = parent;
 
 		buttons.add(new MenuButton(Images.MenuNew , new Point(100, 50) , new Point(500, 150)){
 			public void onClick(){
+				//this menu can be removed now -- another one is taking it's place.
+				myParent.remove(thisMenu);
 				new MenuNewGame(Window.window);
 			}
 		});
 		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)){
 			public void onClick(){
 				myParent.remove(thisMenu);
-				new MenuLoadGame(Window.window);
+				new MenuLoadGame(myParent);
 			}
 		});
 
@@ -39,28 +40,5 @@ public class Menu extends JPanel{
 			g.drawImage(button.getImage(), button.topleft.x, button.topleft.y, null);
 		}
 
-	}
-
-	private abstract class MenuButton implements Clickable{
-		public Point topleft, bottomright;
-		BufferedImage bi;
-		public MenuButton(BufferedImage bi, Point topleft, Point bottomright){
-			this.bi = bi;
-			this.topleft = topleft;
-			this.bottomright = bottomright;
-			InputHandler.registerClickable(this);
-		}
-
-		public void tryClick(Point p){
-			if (p.x > topleft.x && p.y > topleft.y && p.x < bottomright.x && p.y < bottomright.y) {
-				onClick();
-			}
-		}
-
-		public abstract void onClick();
-
-		public BufferedImage getImage(){
-			return bi;
-		}
 	}
 }
