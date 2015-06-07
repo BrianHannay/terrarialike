@@ -36,10 +36,6 @@ public class Menu extends JPanel{
 		parent.validate();
 		parent.setVisible(true);
 	}
-
-	public void finalize(){
-		System.out.println("Getting rid of Menu");
-	}
  
 	public void paint(Graphics g){
 
