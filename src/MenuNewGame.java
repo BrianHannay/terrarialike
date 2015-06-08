@@ -1,8 +1,8 @@
 import java.awt.*;
+import javax.swing.*;
 
-
-public class MenuNewGame{
-	public MenuNewGame(Component parent){
-
+public class MenuNewGame extends JPanel{
+	public MenuNewGame(Container parent){
+		parent.add((JPanel)this);
 	}
 }
