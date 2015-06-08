@@ -29,7 +29,6 @@ public class Menu extends JPanel{
 				myParent.remove(thisMenu);
 				new MenuLoadGame(myParent);
 				myParent.validate();
-				System.out.println("Clicked load");
 			}
 		});
 
