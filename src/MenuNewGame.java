@@ -6,7 +6,8 @@ import java.awt.event.*;
 public class MenuNewGame extends JPanel implements KeyHandler{
 
 	private enum State{
-		GET_NAME;
+		GET_NAME,
+		GET_PLR;
 	}
 
 	public State currentState = State.GET_NAME;
@@ -29,10 +30,15 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 				nameGiven = nameGiven.substring(0, nameGiven.length() -1);
 			}
 		}
+		else if(ke.getKeyCode() == KeyEvent.VK_ENTER && nameGiven.length() > 0){
+			currentState = State.GET_PLR;
+		}
 		//printable characters are within this range - Sure, the numbers may be magic but they're never going to change.
-		else if(ke.getKeyChar() >= 32 && ke.getKeyChar() < 127){
+		//namegiven may be at most 14 characters.
+		else if(ke.getKeyChar() >= 32 && ke.getKeyChar() < 127 && nameGiven.length() < 14){
 			nameGiven += ke.getKeyChar();
 		}
+
 		System.out.println(nameGiven);
 	}
 
