@@ -12,7 +12,7 @@ public class MenuNewGame extends JPanel{
 	}
 
 	public void paint(Graphics g){
-		g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 50);
+		g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 40);
 		g.drawImage(Images.TextInput, 100, 50, null);
 	}
 }
