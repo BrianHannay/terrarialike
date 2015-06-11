@@ -16,6 +16,10 @@ public abstract class MenuButton implements Clickable{
 		if (p.x >= topleft.x && p.y >= topleft.y && p.x <= bottomright.x && p.y <= bottomright.y) {
 			onClick();
 		}
+		else{
+			System.out.println("Click coords:");
+			System.out.println(p);
+		}
 	}
 
 	public abstract void onClick();
