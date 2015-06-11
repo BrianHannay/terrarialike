@@ -2,7 +2,7 @@
 * This file starts the game -- program entry point
 *
 **/
-
+import java.awt.event.*;
 import javax.swing.*;
 import java.io.IOException;
 public class Window extends JFrame 
@@ -42,6 +42,11 @@ public class Window extends JFrame
 		}
 
 		game.init();
+	}
+
+	public void actionPerformed(ActionEvent e){
+		repaint();
+		revalidate();
 	}
 
 	public static void toggleFullscreen(){
