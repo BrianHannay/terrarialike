@@ -28,14 +28,13 @@ public class Window extends JFrame implements ActionListener
 
 
 		Window game = new Window();
-		ih = new InputHandler(game);
 
 		game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		game.setSize(600, 400);
 		game.setResizable(false);
 		game.setVisible(true);
-		frameTimer = new Timer(15, game);
-		frameTimer.start();
+
+		ih = new InputHandler(game);
 
 
 		try{
@@ -46,6 +45,9 @@ public class Window extends JFrame implements ActionListener
 		}
 
 		game.init();
+		
+		frameTimer = new Timer(15, game);
+		frameTimer.start();
 	}
 
 
