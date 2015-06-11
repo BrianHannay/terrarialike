@@ -45,10 +45,19 @@ public class Window extends JFrame implements ActionListener
 		game.init();
 	}
 
+
+	public static boolean threadLocked = false;
 	public void actionPerformed(ActionEvent e){
+		if(threadLocked){
+			System.out.println("Ignoring repaint - already repainting.");
+			return;
+		}
+		threadLocked = true;
 		repaint();
 		revalidate();
+		threadLocked = false;
 	}
+
 
 	public static void toggleFullscreen(){
 		if(Window.isFullscreen){
