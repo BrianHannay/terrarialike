@@ -48,7 +48,6 @@ public class Window extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e){
 		repaint();
 		revalidate();
-		System.out.println("A");
 	}
 
 	public static void toggleFullscreen(){
