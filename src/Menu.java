@@ -8,7 +8,8 @@ public class Menu extends JPanel{
 	ArrayList<MenuButton> buttons = new ArrayList<MenuButton>();
 	
 	public Menu(Container parent){
-		parent.add((JPanel)this);
+
+		parent.add(this);
 
 		//These two lines set variables for the MenuButton's onClick events
 		//since variables used in the inner classes overridden methods 
@@ -26,7 +27,6 @@ public class Menu extends JPanel{
 
 				//Create new menu, attaches itself to window automatically.
 				new MenuNewGame(myParent);
-				//myParent.validate();
 			}
 		});
 		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)){
@@ -34,7 +34,6 @@ public class Menu extends JPanel{
 				myParent.remove(thisMenu);
 				InputHandler.reset();
 				new MenuLoadGame(myParent);
-				myParent.validate();
 			}
 		});
 
