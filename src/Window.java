@@ -5,14 +5,14 @@
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.IOException;
-public class Window extends JFrame 
+public class Window extends JFrame implements ActionListener
 {
 	static boolean isFullscreen = false;
 
 	static JFrame window;
 
 	static InputHandler ih;
-
+	static Timer frameTimer;
 	private void init(){
 		window = this;
 		
@@ -31,7 +31,8 @@ public class Window extends JFrame
 		game.setSize(600, 400);
 		game.setResizable(false);
 		game.setVisible(true);
-
+		frameTimer = new Timer(15, game);
+		frameTimer.start();
 
 
 		try{
