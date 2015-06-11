@@ -5,9 +5,10 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
 public class Images{
-	public static BufferedImage MenuLoad, MenuNew;
+	public static BufferedImage MenuLoad, MenuNew, TextInput;
 	public static void loadImages() throws IOException{
 		MenuLoad = ImageIO.read(new File("image/menuLoad.png"));
 		MenuNew = ImageIO.read(new File("image/menuNew.png"));
+		TextInput = ImageIO.read(new File("image/textInput.png"));
 	}
 }
