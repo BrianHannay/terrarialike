@@ -20,10 +20,10 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 	}
 
 	public void pressed(KeyEvent ke){
-		if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+		if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE && nameGiven.length() > 0){
 			nameGiven = nameGiven.substring(0, nameGiven.length() -1);
 		}
-				
+
 		else if(ke.getKeyChar() != KeyEvent.CHAR_UNDEFINED){
 			nameGiven += ke.getKeyChar();
 		}
