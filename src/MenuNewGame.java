@@ -3,7 +3,7 @@ import javax.swing.*;
 
 public class MenuNewGame extends JPanel{
 	public MenuNewGame(Container parent){
-		parent.add((JPanel)this);
+		parent.add(this);
 	}
 
 	public void paint(Graphics g){
