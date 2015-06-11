@@ -5,9 +5,6 @@ public class InputHandler implements KeyListener, MouseListener{
 
 
 
-	/**
-	** These are the MOUSE events
-	**/
 
 	public InputHandler(JFrame window){
 		window.addMouseListener(this);
@@ -20,6 +17,11 @@ public class InputHandler implements KeyListener, MouseListener{
 		keys = new ArrayList<Key>();
 		keyHandlers = new ArrayList<KeyHandler>();
 	}
+
+
+	/**
+	** These are the MOUSE events
+	**/
 
 	private static ArrayList<Clickable> clickables = new ArrayList<Clickable>();
 	public static void registerClickable(Clickable c){
@@ -54,6 +56,8 @@ public class InputHandler implements KeyListener, MouseListener{
 
 
 	private static ArrayList<KeyHandler> keyHandlers = new ArrayList<KeyHandler>();
+
+	
 
 	public static boolean isDown(int keyNum){
 		for(int i=0; i<keys.size(); i++){

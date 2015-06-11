@@ -20,13 +20,20 @@ public class Menu extends JPanel{
 			public void onClick(){
 				//this menu can be removed now -- another one is taking it's place.
 				myParent.remove(thisMenu);
-				new MenuNewGame(Window.window);
+
+				//remove clickables
+				InputHandler.reset();
+
+				//Create new menu, attaches itself to window automatically.
+				new MenuNewGame(myParent);
 				myParent.validate();
 			}
 		});
 		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)){
 			public void onClick(){
 				myParent.remove(thisMenu);
+
+				InputHandler.reset();
 				new MenuLoadGame(myParent);
 				myParent.validate();
 			}
