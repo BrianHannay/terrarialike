@@ -8,6 +8,7 @@ public class InputHandler implements KeyListener, MouseListener{
 
 	public InputHandler(JFrame window){
 		window.addMouseListener(this);
+		window.addKeyListener(this);
 		System.out.println("Made InputHandler");
 
 	}
@@ -78,7 +79,6 @@ public class InputHandler implements KeyListener, MouseListener{
 	public void keyPressed(KeyEvent ev){
 		setKey(ev.getKeyCode(), true);	
 		for(KeyHandler kh : keyHandlers){
-			System.out.println(1);
 			kh.pressed(ev);
 		}
 	}
