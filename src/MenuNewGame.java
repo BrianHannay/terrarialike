@@ -3,16 +3,26 @@ import javax.swing.*;
 
 public class MenuNewGame extends JPanel{
 
-	static final String[] state = {"Get Name"};
+	private enum State{
+		GET_NAME;
+	}
 
-	public String currentState = state[0];
+	public State currentState = State.GET_NAME;
+	private Container parent;
 
 	public MenuNewGame(Container parent){
+		this.parent = parent;
 		parent.add(this);
 	}
 
 	public void paint(Graphics g){
-		g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 40);
-		g.drawImage(Images.TextInput, 100, 50, null);
+		switch(currentState){
+			case GET_NAME:
+				g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 40);
+				g.drawImage(Images.TextInput, 100, 50, null);
+				break;
+			default:
+				ErrorHandler.err(new Exception(), parent, "Unknown state for MenuNewGame; State="+currentState);
+		}
 	}
 }

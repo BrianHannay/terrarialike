@@ -1,8 +1,8 @@
-import javax.swing.JFrame;
+import java.awt.Container;
 
 
 public class ErrorHandler{
-	public static void err(Exception e, JFrame f, String message){
+	public static void err(Exception e, Container f, String message){
 		//TODO: print the message and Exception to the JFrame
 		System.out.println(message);
 	}
