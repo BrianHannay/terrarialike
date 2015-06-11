@@ -13,6 +13,9 @@ public class Window extends JFrame implements ActionListener
 
 	static InputHandler ih;
 	static Timer frameTimer;
+
+
+
 	private void init(){
 		window = this;
 		

@@ -2,6 +2,11 @@ import java.awt.*;
 import javax.swing.*;
 
 public class MenuNewGame extends JPanel{
+
+	static final String[] state = {"Get Name"};
+
+	public String currentState = state[0];
+
 	public MenuNewGame(Container parent){
 		parent.add(this);
 	}
