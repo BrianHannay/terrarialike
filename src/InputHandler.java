@@ -15,6 +15,12 @@ public class InputHandler implements KeyListener, MouseListener{
 
 	}
 
+	public static void reset(){
+		clickables = new ArrayList<Clickable>();
+		keys = new ArrayList<Key>();
+		keyHandlers = new ArrayList<KeyHandler>();
+	}
+
 	private static ArrayList<Clickable> clickables = new ArrayList<Clickable>();
 	public static void registerClickable(Clickable c){
 		clickables.add(c);
@@ -46,6 +52,9 @@ public class InputHandler implements KeyListener, MouseListener{
 	** These are the KEY events
 	**/
 
+
+	private static ArrayList<KeyHandler> keyHandlers = new ArrayList<KeyHandler>();
+
 	public static boolean isDown(int keyNum){
 		for(int i=0; i<keys.size(); i++){
 			if(keys.get(i).code == keyNum){
@@ -62,6 +71,9 @@ public class InputHandler implements KeyListener, MouseListener{
 	}
 	public void keyPressed(KeyEvent ev){
 		setKey(ev.getKeyCode(), true);	
+		for(KeyHandler kh : keyHandlers){
+			kh.pressed(ev);
+		}
 	}
 
 	private static void setKey(int code, boolean down){
