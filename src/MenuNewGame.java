@@ -1,7 +1,9 @@
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 
-public class MenuNewGame extends JPanel{
+
+public class MenuNewGame extends JPanel implements KeyHandler{
 
 	private enum State{
 		GET_NAME;
@@ -9,10 +11,21 @@ public class MenuNewGame extends JPanel{
 
 	public State currentState = State.GET_NAME;
 	private Container parent;
+	private String nameGiven = "";
 
 	public MenuNewGame(Container parent){
 		this.parent = parent;
 		parent.add(this);
+		InputHandler.registerKeyHandler(this);
+	}
+
+	public void pressed(KeyEvent ke){
+		if(ke.getKeyChar() != KeyEvent.CHAR_UNDEFINED){
+			nameGiven += ke.getKeyChar();
+		}
+		else if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+			nameGiven = nameGiven.substring(0, nameGiven.length() -1);
+		}
 	}
 
 	public void paint(Graphics g){

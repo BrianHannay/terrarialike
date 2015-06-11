@@ -24,9 +24,9 @@ public class InputHandler implements KeyListener, MouseListener{
 	**/
 
 	private static ArrayList<Clickable> clickables = new ArrayList<Clickable>();
+
 	public static void registerClickable(Clickable c){
 		clickables.add(c);
-		System.out.println("Clickable registered.");
 	}
 
 	public void mouseExited(MouseEvent e){
@@ -57,7 +57,9 @@ public class InputHandler implements KeyListener, MouseListener{
 
 	private static ArrayList<KeyHandler> keyHandlers = new ArrayList<KeyHandler>();
 
-	
+	public static void registerKeyHandler(KeyHandler kh){
+		keyHandlers.add(kh);
+	}
 
 	public static boolean isDown(int keyNum){
 		for(int i=0; i<keys.size(); i++){
