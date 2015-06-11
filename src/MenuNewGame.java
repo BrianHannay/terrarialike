@@ -20,11 +20,16 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 	}
 
 	public void pressed(KeyEvent ke){
-		if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE && nameGiven.length() > 0){
-			nameGiven = nameGiven.substring(0, nameGiven.length() -1);
-		}
 
-		else if(ke.getKeyChar() != KeyEvent.CHAR_UNDEFINED){
+		if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+			//this needs to be compared seperately. We don't want a VK_BACK_SPACE appended to the string
+			//if the string length is 0 (VK_BACK_SPACE is a printable character)
+			if(nameGiven.length() > 0){
+				nameGiven = nameGiven.substring(0, nameGiven.length() -1);
+			}
+		}
+		//printable characters are within this range - Sure, the numbers may be magic but they're never going to change.
+		else if(ke.getKeyChar() >= 32 && ke.getKeyChar() < 127){
 			nameGiven += ke.getKeyChar();
 		}
 		System.out.println(nameGiven);
