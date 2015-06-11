@@ -1,14 +1,19 @@
 import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
+import java.awt.Point;
+import java.awt.Container;
 public class InputHandler implements KeyListener, MouseListener{
 
 
+	private Point insetsOffset;
 
-
-	public InputHandler(JFrame window){
+	public InputHandler(Container window){
 		window.addMouseListener(this);
 		window.addKeyListener(this);
+		//this is a mouthfull...
+		insetsOffset = new Point(window.getInsets().left, window.getInsets().top);
+
 		System.out.println("Made InputHandler");
 
 	}
@@ -43,8 +48,9 @@ public class InputHandler implements KeyListener, MouseListener{
 		
 	}
 	public void mouseClicked(MouseEvent e){
+		Point pointCorrectedForInsets = new Point(e.getX() - insetsOffset.x, e.getY() - insetsOffset.y);
 		for (Clickable c : clickables) {
-			c.tryClick(e.getPoint());
+			c.tryClick(pointCorrectedForInsets);
 		}
 	}
 
