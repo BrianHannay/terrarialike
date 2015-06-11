@@ -52,7 +52,7 @@ public class InputHandler implements KeyListener, MouseListener{
 	public void mouseClicked(MouseEvent e){
 		Point pointCorrectedForInsets = new Point(e.getX() - insetsOffset.x, e.getY() - insetsOffset.y);
 		System.out.println(pointCorrectedForInsets);
-		for (Clickable c : clickables) {
+		for (Clickable c : clickables) { 
 			c.tryClick(pointCorrectedForInsets);
 		}
 	}
