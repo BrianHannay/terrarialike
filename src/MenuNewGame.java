@@ -38,8 +38,7 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 		else if(ke.getKeyChar() >= 32 && ke.getKeyChar() < 127 && nameGiven.length() < 14){
 			nameGiven += ke.getKeyChar();
 		}
-
-		System.out.println(nameGiven);
+		//else ignore input
 	}
 
 	public void paint(Graphics g){
@@ -49,6 +48,8 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 				g.drawImage(Images.TextInput, 100, 50, null);
 				g.setFont(inputFont);
 				g.drawString(nameGiven, 110, 90);
+				break;
+			case GET_PLR:
 				break;
 			default:
 				ErrorHandler.err(new Exception(), parent, "Unknown state for MenuNewGame; State="+currentState);
