@@ -78,6 +78,7 @@ public class InputHandler implements KeyListener, MouseListener{
 	public void keyPressed(KeyEvent ev){
 		setKey(ev.getKeyCode(), true);	
 		for(KeyHandler kh : keyHandlers){
+			System.out.println(1);
 			kh.pressed(ev);
 		}
 	}
