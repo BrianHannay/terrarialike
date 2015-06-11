@@ -33,6 +33,7 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 			case GET_NAME:
 				g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 40);
 				g.drawImage(Images.TextInput, 100, 50, null);
+				g.drawString(nameGiven, 110, 60);
 				break;
 			default:
 				ErrorHandler.err(new Exception(), parent, "Unknown state for MenuNewGame; State="+currentState);
