@@ -47,6 +47,7 @@ public class Window extends JFrame
 	public void actionPerformed(ActionEvent e){
 		repaint();
 		revalidate();
+		System.out.println("A");
 	}
 
 	public static void toggleFullscreen(){
