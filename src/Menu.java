@@ -33,7 +33,7 @@ public class Menu extends JPanel{
 		});
 
 		parent.validate();
-		parent.setVisible(true); 
+		parent.setVisible(true);
 	}
  
 	public void paint(Graphics g){

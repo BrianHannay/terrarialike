@@ -13,7 +13,7 @@ public abstract class MenuButton implements Clickable{
 	}
 
 	public void tryClick(Point p){
-		if (p.x > topleft.x && p.y > topleft.y && p.x < bottomright.x && p.y < bottomright.y) {
+		if (p.x >= topleft.x && p.y >= topleft.y && p.x <= bottomright.x && p.y <= bottomright.y) {
 			onClick();
 		}
 	}
