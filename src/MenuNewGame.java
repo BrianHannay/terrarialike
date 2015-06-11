@@ -11,7 +11,7 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 
 	public State currentState = State.GET_NAME;
 	private Container parent;
-	private String nameGiven = "";
+	private String nameGiven = "A";
 
 	public MenuNewGame(Container parent){
 		this.parent = parent;
