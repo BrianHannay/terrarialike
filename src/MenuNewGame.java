@@ -11,7 +11,8 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 
 	public State currentState = State.GET_NAME;
 	private Container parent;
-	private String nameGiven = "A";
+	private String nameGiven = "";
+	private static Font inputFont = new Font("Arial", Font.PLAIN, 26);
 
 	public MenuNewGame(Container parent){
 		this.parent = parent;
@@ -40,6 +41,7 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 			case GET_NAME:
 				g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 40);
 				g.drawImage(Images.TextInput, 100, 50, null);
+				g.setFont(inputFont);
 				g.drawString(nameGiven, 110, 60);
 				break;
 			default:
