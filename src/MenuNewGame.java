@@ -26,6 +26,7 @@ public class MenuNewGame extends JPanel implements KeyHandler{
 		else if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE){
 			nameGiven = nameGiven.substring(0, nameGiven.length() -1);
 		}
+		System.out.println(nameGiven);
 	}
 
 	public void paint(Graphics g){
