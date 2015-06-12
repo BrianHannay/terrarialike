@@ -23,7 +23,7 @@ public class MenuNewGame extends JPanel{
 		this.parent = parent;
 		currentState = State.GET_NAME;
 		parent.add(this);
-		nameBox = new InputBox(this);
+		nameBox = new InputBox(this, 100, 50);
 	}
 
 	
@@ -31,8 +31,8 @@ public class MenuNewGame extends JPanel{
 	public void paint(Graphics g){
 		switch(currentState){
 			case GET_NAME:
+				//This is placed directly on top of the TextInput
 				g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 40);
-				g.drawImage(Images.TextInput, 100, 50, null);
 				break;
 			case GET_PLR:
 
@@ -47,10 +47,13 @@ public class MenuNewGame extends JPanel{
 
 		private String nameGiven = "";
 		private Font inputFont = new Font("Arial", Font.PLAIN, 26);
+		public int x, y;
 
-		public InputBox(Container parent){
+		public InputBox(Container parent, int x, int y){
 			parent.add(this);
 			InputHandler.registerKeyHandler(this);
+			this.x = x;
+			this.y = y;
 		}
 
 		public void pressed(KeyEvent ke){
