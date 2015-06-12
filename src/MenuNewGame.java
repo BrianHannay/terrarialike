@@ -28,7 +28,8 @@ public class MenuNewGame extends JPanel{
 
 	
 
-	public void paint(Graphics g){
+	public void paintComponent(Graphics g){
+		super.paintComponent(g);
 		switch(currentState){
 			case GET_NAME:
 				//This is placed directly on top of the TextInput
@@ -77,7 +78,7 @@ public class MenuNewGame extends JPanel{
 			//else ignore input
 		}
 
-		public void paint(Graphics g){
+		public void paintComponent(Graphics g){
 			g.setFont(inputFont);
 			g.drawImage(Images.TextInput, 100, 50, null);
 		}
