@@ -52,6 +52,7 @@ public class MenuNewGame extends JPanel{
 
 		public InputBox(Container parent, int x, int y){
 			parent.add(this);
+			System.out.println("Added to parent.");
 			InputHandler.registerKeyHandler(this);
 			this.x = x;
 			this.y = y;
