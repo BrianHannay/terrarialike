@@ -26,7 +26,7 @@ public class MenuNewGame extends JPanel{
 		nameBox = new InputBox(this, 100, 50);
 	}
 
-	
+	 
 
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
