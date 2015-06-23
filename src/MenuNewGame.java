@@ -88,7 +88,7 @@ public class MenuNewGame extends JPanel{
 			//super.paintComponent(g);
 			g.setFont(inputFont);
 			g.drawImage(Images.TextInput, x, y, null);
-			g.drawString(this.get(), x, y+20);
+			g.drawString(this.get(), x+20, y+60);
 		}
 
 		public String get(){
