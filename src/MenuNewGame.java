@@ -8,7 +8,7 @@ import java.awt.Font;
 ** MenuNewGame is part of the menu system for TerrariaLike.
 ** It adds itself to graphics object that it is given - object g.
 **/
-public class MenuNewGame extends Container{
+public class MenuNewGame extends JPanel{
 
 	private enum State{
 		GET_NAME,
@@ -29,7 +29,7 @@ public class MenuNewGame extends Container{
 	 
 
 	public void paintComponent(Graphics g){
-		//super.paintComponent(g);
+		super.paintComponent(g);
 		switch(currentState){
 			case GET_NAME:
 				//This is placed directly on top of the TextInput
