@@ -33,7 +33,7 @@ public class MenuNewGame extends JPanel{
 	 
 
 	public void paint(Graphics g){
-		super.paintComponent(g);
+		super.paint(g);
 		switch(currentState){
 			case GET_NAME:
 				//This is placed directly on top of the TextInput
