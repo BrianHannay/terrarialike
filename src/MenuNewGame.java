@@ -21,8 +21,12 @@ public class MenuNewGame extends JPanel{
 
 	public MenuNewGame(Container parent){
 		this.parent = parent;
-		currentState = State.GET_NAME;
 		parent.add(this);
+		setFirstState();
+	}
+
+	private void setFirstState(){		
+		currentState = State.GET_NAME;
 		nameBox = new InputBox(this, 100, 50);
 	}
 
@@ -80,6 +84,7 @@ public class MenuNewGame extends JPanel{
 		}
 
 		public void paint(Graphics g){
+			System.out.println("x: "+x+", y: "+y);
 			//super.paintComponent(g);
 			g.setFont(inputFont);
 			g.drawImage(Images.TextInput, x, y, null);
