@@ -38,6 +38,7 @@ public class MenuNewGame extends JPanel{
 			case GET_NAME:
 				//This is placed directly on top of the TextInput
 				g.drawString("Please enter your name as you would like it to appear on your boarding pass", 100, 40);
+				nameBox.draw(g);
 				break;
 			case GET_PLR:
 
@@ -83,7 +84,7 @@ public class MenuNewGame extends JPanel{
 			//else ignore input
 		}
 
-		public void paint(Graphics g){
+		public void draw(Graphics g){
 			System.out.println("\""+(int)' '+"\"");
 			//super.paintComponent(g);
 			g.setFont(inputFont);
