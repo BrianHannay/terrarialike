@@ -84,12 +84,11 @@ public class MenuNewGame extends JPanel{
 		}
 
 		public void paint(Graphics g){
-			System.out.println("x: "+x+", y: "+y);
+			System.out.println((char)32);
 			//super.paintComponent(g);
 			g.setFont(inputFont);
 			g.drawImage(Images.TextInput, x, y, null);
 			g.drawString(this.get(), x, y+20);
-			System.out.println("Painted a inputbox");
 		}
 
 		public String get(){
