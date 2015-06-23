@@ -75,16 +75,16 @@ public class MenuNewGame extends JPanel{
 					nameGiven = nameGiven.substring(0, nameGiven.length() -1);
 				}
 			}
-			//printable characters are within this range - Sure, the numbers may be magic but they're never going to change.
+			//printable characters are within this range - from ' ' to '~'.
 			//namegiven may be at most 14 characters.
-			else if(ke.getKeyChar() >= (int)' ' && ke.getKeyChar() < 127 && nameGiven.length() < 14){
+			else if(ke.getKeyChar() >= (int)' ' && ke.getKeyChar() < (int)'~' && nameGiven.length() < 14){
 				nameGiven += ke.getKeyChar();
 			}
 			//else ignore input
 		}
 
 		public void paint(Graphics g){
-			System.out.println("\""+(char)126+"\"");
+			System.out.println("\""+(int)' '+"\"");
 			//super.paintComponent(g);
 			g.setFont(inputFont);
 			g.drawImage(Images.TextInput, x, y, null);
