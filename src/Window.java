@@ -20,7 +20,7 @@ public class Window extends JFrame implements ActionListener
 		window = this;
 		
 		//Creating a menu adds it to the container it is passed
-		new Menu(this);
+		this.add(new MainMenu(this));
 	}
 
 	public static void main(String[] args){

@@ -41,7 +41,7 @@ public class MenuNewGame extends JPanel{
 				nameBox.draw(g);
 				break;
 			case GET_PLR:
-
+				
 				break;
 			default:
 				ErrorHandler.err(new Exception(), parent, "Unknown state for MenuNewGame; State="+currentState);
