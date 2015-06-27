@@ -1,7 +1,7 @@
 import java.io.*;
 
 public class Tests{
-	public static int main(){
+	public static int main(String[] args){
 		if(!savehandlerAddsItems()){
 			System.out.println("Savehandler is not adding items.");
 			return 1;
