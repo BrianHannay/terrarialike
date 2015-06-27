@@ -2,10 +2,20 @@ import java.io.*;
 
 public class Tests{
 	public static void main(String[] args) throws Exception{
-		if(!savehandlerAddsItems()){
-				System.out.println("Savehandler is not adding items.");
-				throw new Exception("Savehandler");
+		boolean passed = true;
+		passed &= should(savehandlerAddsItems(), "Savehandler is not adding items.");
+
+
+		if(!passed){
+			throw new Exception("One or more tests did not pass.");
 		}
+	}
+
+	public static boolean should(boolean success, String errorMessage){
+		if(!success){
+			System.out.println(errorMessage);
+		}
+		return success;
 	}
 
 	public static boolean savehandlerAddsItems(){
