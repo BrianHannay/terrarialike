@@ -3,16 +3,18 @@
 *
 **/
 import java.awt.event.*;
+import java.awt.*;
 import javax.swing.*;
 import java.io.IOException;
 public class Window extends JFrame implements ActionListener
 {
 	static boolean isFullscreen = false;
 
-	static JFrame window;
+	static Window window;
 
 	static InputHandler ih;
 	static Timer frameTimer;
+	static Component currentView;
 
 
 
@@ -21,6 +23,7 @@ public class Window extends JFrame implements ActionListener
 		
 		//Creating a menu adds it to the container it is passed
 		this.add(new MainMenu(this));
+		switchView(new MainMenu(this));
 	}
 
 	public static void main(String[] args){
@@ -63,6 +66,16 @@ public class Window extends JFrame implements ActionListener
 		threadLocked = false;
 	}
 
+
+	public void switchView(Component newOne){
+		if(currentView != null){
+			remove(currentView);
+		}
+
+		//Wait. Add can be used from static context?!
+		add(newOne);
+		currentView = newOne;
+	}
 
 	public static void toggleFullscreen(){
 		if(Window.isFullscreen){

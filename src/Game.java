@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Game extends JPanel{
-	public Game(Component c){
-
+	public Game(Container c){
+		c.add(this);
 	}
 }

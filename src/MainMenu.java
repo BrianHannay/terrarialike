@@ -18,21 +18,17 @@ public class MainMenu extends JPanel{
 
 		buttons.add(new MenuButton(Images.MenuNew , new Point(100, 50) , new Point(500, 150)){
 			public void onClick(){
-				//this menu can be removed now -- another one is taking it's place.
-				myParent.remove(thisMenu);
-				removeFromParent();
 				//remove clickables
 				InputHandler.reset();
-
-				//Create new menu, attaches itself to window automatically.
-				new MenuNewGame(myParent);
+				//remove MainMenu from view, substitute with new menugame
+				Window.window.switchView(new MenuNewGame(myParent));
 			}
 		});
 		buttons.add(new MenuButton(Images.MenuLoad, new Point(100, 200), new Point(500, 350)){
 			public void onClick(){
-				myParent.remove(thisMenu);
+
 				InputHandler.reset();
-				new MenuLoadGame(myParent);
+				Window.window.switchView(new MenuLoadGame(myParent));
 			}
 		});
 
