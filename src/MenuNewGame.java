@@ -53,6 +53,7 @@ public class MenuNewGame extends JPanel{
 				new Game(parent);
 				currentState = State.DONE;
 				break; 
+				
 			case DONE:
 				System.out.println("MenuNewGame still being drawn after removed from parent.");
 				break;

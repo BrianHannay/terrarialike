@@ -1,12 +1,11 @@
 import java.io.*;
 
 public class Tests{
-	public static int main(String[] args){
+	public static void main(String[] args) throws Exception{
 		if(!savehandlerAddsItems()){
-			System.out.println("Savehandler is not adding items.");
-			return 1;
+				System.out.println("Savehandler is not adding items.");
+				throw new Exception("Savehandler");
 		}
-		return 0;
 	}
 
 	public static boolean savehandlerAddsItems(){
