@@ -12,7 +12,9 @@ public class MenuNewGame extends JPanel{
 
 	private enum State{
 		GET_NAME,
-		GET_PLR;
+		GET_PLR,
+		START_GAME,
+		DONE;
 	}
 
 	public State currentState = State.GET_NAME;
@@ -41,8 +43,17 @@ public class MenuNewGame extends JPanel{
 				nameBox.draw(g);
 				break;
 			case GET_PLR:
-				
+				//I'll add this later. TODO
+				//For now, skip to start game
+				currentState = State.START_GAME;
 				break;
+
+			case START_GAME:
+				parent.remove(this);
+				new Game(parent);
+				currentState = State.DONE;
+			case DONE:
+				System.out.println("MenuNewGame still being drawn after removed from parent.");
 			default:
 				ErrorHandler.err(new Exception(), parent, "Unknown state for MenuNewGame; State="+currentState);
 		}
