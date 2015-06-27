@@ -6,7 +6,10 @@ public class Tests{
 		passed &= should(savehandlerAddsItems(), "Savehandler is not adding items.");
 
 
-		if(!passed){
+		if(passed){
+			System.out.println("All tests passed successfully.");
+		}
+		else{
 			throw new Exception("One or more tests did not pass.");
 		}
 	}
