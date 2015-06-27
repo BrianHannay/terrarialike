@@ -13,7 +13,6 @@ public class Tests{
 			System.out.println("All tests passed successfully.");
 		}
 		else{
-			System.out.println(windowSwitchesViews());
 			System.out.flush();
 			throw new Exception("One or more tests did not pass.");
 		}
@@ -44,19 +43,15 @@ public class Tests{
 		JPanel jp1 = new JPanel();
 		JPanel jp2 = new JPanel();
 		testWindow.switchView(jp1);
+
 		if(testWindow.currentView != jp1){
 			return 1;
 		}
-		//if(testWindow.getComponent(0) != jp1){
-		//	System.out.println(testWindow.getComponent(0));
-		//}
+
 		testWindow.switchView(jp2);
 		if(testWindow.currentView != jp2){
-			return 3;
+			return 2;
 		}
-		// if(testWindow.getComponent(0) != jp2){
-		// 	return 4;
-		// }
 		return 0;
 
 	}

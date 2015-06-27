@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 import java.io.IOException;
-public class Window extends JFrame implements ActionListener
+public class Window extends JWindow implements ActionListener
 {
 	static boolean isFullscreen = false;
 
@@ -32,9 +32,9 @@ public class Window extends JFrame implements ActionListener
 
 		Window game = new Window();
 
-		game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		game.setSize(600, 400);
-		game.setResizable(false);
+		//game.setResizable(false);
 		game.setVisible(true);
 
 		ih = new InputHandler(game);
@@ -81,10 +81,10 @@ public class Window extends JFrame implements ActionListener
 		if(Window.isFullscreen){
 		}
 		else{
-			window.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			//window.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		}
 
-		window.setUndecorated(Window.isFullscreen);
+		//window.setUndecorated(Window.isFullscreen);
 		Window.isFullscreen = !Window.isFullscreen;
 	}
 }
