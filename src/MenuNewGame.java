@@ -52,8 +52,11 @@ public class MenuNewGame extends JPanel{
 				parent.remove(this);
 				new Game(parent);
 				currentState = State.DONE;
+				break; 
 			case DONE:
 				System.out.println("MenuNewGame still being drawn after removed from parent.");
+				break;
+
 			default:
 				ErrorHandler.err(new Exception(), parent, "Unknown state for MenuNewGame; State="+currentState);
 		}
