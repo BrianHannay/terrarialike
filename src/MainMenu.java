@@ -37,6 +37,7 @@ public class MainMenu extends JPanel{
 	}
  
 	public void paint(Graphics g){
+		System.out.println("a");
 		for (MenuButton button : buttons) {
 			g.drawImage(button.getImage(), button.topleft.x, button.topleft.y, null);
 		}
