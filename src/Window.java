@@ -22,7 +22,6 @@ public class Window extends JFrame implements ActionListener
 		window = this;
 		
 		//Creating a menu adds it to the container it is passed
-		this.add(new MainMenu(this));
 		switchView(new MainMenu(this));
 	}
 
