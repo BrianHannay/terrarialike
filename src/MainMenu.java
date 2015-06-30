@@ -33,11 +33,10 @@ public class MainMenu extends JPanel{
 		});
 
 		parent.validate();
-		parent.setVisible(true);
+		//parent.setVisible(true);
 	}
  
 	public void paint(Graphics g){
-		System.out.println("a");
 		for (MenuButton button : buttons) {
 			g.drawImage(button.getImage(), button.topleft.x, button.topleft.y, null);
 		}
