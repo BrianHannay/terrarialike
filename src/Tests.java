@@ -34,7 +34,7 @@ public class Tests{
 			public void save(Savable s, File f){}
 		});
 
-		return (SaveHandler.itemsToSave.size() == beforeAdding + 1);
+		return SaveHandler.itemsToSave.size() == beforeAdding + 1;
 	}
 
 	//returns the reason for the error or 0 for no error

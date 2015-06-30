@@ -23,7 +23,6 @@ public class MenuNewGame extends JPanel{
 
 	public MenuNewGame(Container parent){
 		this.parent = parent;
-		parent.add(this);
 		setFirstState();
 	}
 
@@ -49,8 +48,8 @@ public class MenuNewGame extends JPanel{
 				break;
 
 			case START_GAME:
-				parent.remove(this);
-				new Game(parent);
+
+				Window.window.switchView(new Game(parent));
 				currentState = State.DONE;
 				break; 
 				

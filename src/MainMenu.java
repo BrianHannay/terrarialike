@@ -35,10 +35,6 @@ public class MainMenu extends JPanel{
 		parent.validate();
 		parent.setVisible(true);
 	}
-
-	public void removeFromParent(){
-		myParent.remove(this);
-	}
  
 	public void paint(Graphics g){
 		for (MenuButton button : buttons) {
